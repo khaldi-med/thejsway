@@ -1,13 +1,11 @@
 const prompt = require('prompt-sync')();
+while (true) {
+  const number = Number(prompt("Enter a number between 50 and 100 (inclusive): "));
 
-const number = Number(prompt('Enter a number: '));
-let i = 50;
-if(number >= 100){
-  console.log('Enter a new one!');
-}
-else if (number <= 100){
-  while(i <= 100){
-    console.log(i)
-    i++;
+  if (number <= 100) {
+    console.log("You entered a valid number. Exiting loop.");
+    break;
+  } else {
+    console.log("Enter a number less than or equal to 100.");
   }
 }
