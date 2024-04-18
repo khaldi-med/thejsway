@@ -71,7 +71,95 @@
 * It's important to understand that once created, a string value never changes: strings are immutable in JavaScript.
 
 * The JavaScript method Array.from() can be used to turn a string into an array. 
-* 
+
+### Web development 101
+
+* To be online, a web site has to be published on a server. This is a special kind of machine whose task is to listen and answer to the demands of clients. A server that publishes resources on the Web is logically called a web server.
+
+* The machine asking a server for a resource is called a web client. Actually, the real client is a software program running on the machine. A well-known type of web client is the browser, a program specialized in displaying web pages.
+
+* The main HTTP methods are GET to access a resource and POST to push some information on the server. Other ones exist, such as HEAD, PUT or DELETE.
+
+``` 
+The HTTP status codes belong to different families, depending on their first digit.
+
+Family	Meaning	Examples
+1xx	Information	
+2xx	Success	200: request handled successfully
+3xx	Redirection	
+4xx	Client error	404: resource not found
+5xx	Server error	500: internal server error
+```
+
+* The set of technologies enabling the creation of web applications is codenamed AJAX (Asynchronous JavaScript and XML). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
+
+* In a synchronous exchange, the asker waits until he gets the needed info. A telephone call is an example of a synchronous exchange.
+
+* On the contrary, the asker in an asynchronous exchange can do something else while waiting for the completion of his request. Email is an example of an asynchronous exchange.
+
+* Enabling cross-domain requests is done by setting on cross-origin resource sharing (CORS) in the server configuration.
+
+* The "X" letter in AJAX stands for XML, a generic markup language that used to be the standard for cross-platform data exchanges.
+
+* JSON, or JavaScript Object Notation, is a textual syntax for describing structured information. As you'll see in the following example, JSON borrows heavily from the JavaScript object syntax.
+
+* A JSON document is a set of name/value pairs. Names are always within double quotes "". Values can be numbers, strings, booleans, arrays or objects.
+
+* Web resources are uniquely addressed by their URL (Uniform resource locator). A URL is a text of the form http://www.mywebsite.com/myresourcepath/myresource.
+
+* Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on cross-origin resource sharing **(CORS)**.
+
+```
+The standard way to send asynchronous HTTP requests in JavaScript is to use the fetch() method. Here is its general usage form.
+
+// Sends an asynchronous HTTP request to the target url
+fetch(url)
+  .then(() => {
+    // Code called in the future when the request ends successfully
+  })
+  .catch(() => {
+    // Code called in the future when an errors occurs during the request
+  });
+```
+
+```
+When the fetch() method is executed, it immediately returns a promise, which is a wrapper for an operation whose result might be available in the future. A promise is in one of these states:
+
+pending: initial state, not fulfilled or rejected.
+fulfilled: meaning that the operation completed successfully.
+rejected: meaning that the operation failed.
+A JavaScript promise is an object with then() and catch() methods. then() is called when the promise is fulfilled. It takes the operation result as a parameter. On the contrary, catch() is called when the promise is rejected.
+
+What's great about promises is that they can be chained together. Here's how you could perform a series of asynchronous operations in JavaScript.
+```
+```
+getData()
+  .then(a => filterData(a)) // Called asynchronously when getData() returns
+  .then(b => processData(b)) // Called asynchronously when filterData() returns
+  .then(c => displayData(c)) // Called asynchronously when processData() returns
+  // ...
+```
+
+```
+By nature, external HTTP requests are subject to errors: network failure, missing resource, etc. Handling these errors is done by adding a catch() method to the fetch() call. A basic level of error handling is to log the error message in the console.
+
+fetch("http://non-existent-resource")
+  .catch(err => {
+    console.error(err.message);
+  });
+
+```
+
+* JSON and JavaScript
+The JavaScript language offers native support for the JSON format:
+	- The JSON.parse() method transforms a JSON string into a JavaScript object.
+	- On the contrary, the JSON.stringify() method transforms a JavaScript object into a JSON string.
+	- These methods can also handle JSON arrays.
+
+* The json() method of the HTTP Response object returns a promise that resolves with the result of parsing the response text as JSON. 
+
+
+
 
 
 
