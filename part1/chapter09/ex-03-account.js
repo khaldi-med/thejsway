@@ -9,11 +9,13 @@ class Account{
     this.balance += amount;
   }
   describe(){
-    console.log(`Owner: ${this.name}, Balance: ${this.balance}`);
+    return (`Owner: ${this.name}, Balance: ${this.balance}`);
   }
 }
 
 const newAccount = new Account("John", 1000);
 console.log(newAccount.describe());
-newAccount.credit(-100)
-console.log(newAccount.describe());
+
+// use credit method
+newAccount.credit(-100);
+console.log(newAccount.describe())
