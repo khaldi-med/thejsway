@@ -104,7 +104,43 @@ myObject.method1(/* ... */);
 
 * In JavaScript, a class is itself an object, not a static blueprint.
 
+* The JavaScript class syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model on top of JavaScript's own prototype-based model. It's an example of what programmers call syntactic sugar.
+
+* Object-Oriented Programming, or OOP, is a programming paradigm that uses objects containing both data and behavior to create programs.
+
+* A class is an object-oriented abstraction for an idea or a concept manipulated by a program. It offers a convenient syntax to create objects representing this concept.
+
+* A JavaScript class is defined with the class keyword. It can only contain methods. The constructor() method, called during object creation, is used to initialize the object, often by giving it some data properties. Inside methods, the this keyword represents the object on which the method was called. 
+
+* There are several ways to create and link JavaScript objects through prototypes. One is to use the Object.create() method.
+
+### functional programming 
+
+* JavaScript is a multi-paradigm language: you can write programs using an imperative, object-oriented or functional programming style.
+
+```
+const titles = movies => movies.map(movie => movie.title);
+const byNolan = movie => movie.director === "Christopher Nolan";
+const filter = (movies, func) => movies.filter(func);
+const goodRating = movie => movie.imdbRating >= 7.5;
+const ratings = movies => movies.map(movie => movie.imdbRating);
+const average = array => array.reduce((sum, value) => sum + value, 0) / array.length;
+
+console.log(titles(movieList));
+const nolanMovieList = filter(movieList, byNolan);
+console.log(nolanMovieList.length);
+console.log(titles(filter(movieList, goodRating)));
+console.log(average(ratings(nolanMovieList)));
+```
+* A function that operates on another function (taking it as a parameter or returning it) is called a higher-order function.
+
 * 
+
+
+
+
+
+
 
 ### Web development 101
 
