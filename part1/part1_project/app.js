@@ -16,7 +16,7 @@ while (true) {
     const linkUrl = prompt("Enter the url: ");
     const author = prompt("Enter the author: ");
 
-    let index = links.length +1;
+    let index = 1;
     let newLink = `${index}: ${linkTitle} ${linkUrl}. Author: ${author}\n`;
 
     const httpProtocol = ["http://", "https://"];
@@ -34,10 +34,10 @@ while (true) {
     }
   } else if (choosOp === option[2]) {
     const removeLink = prompt(
-      `Enter the index of the link to be removed (btween 1 and ${links.length}): `,
+      `Enter the index of the link to be removed (btween 1 and ${links.length})`,
     );
 
-    if (removeLink > 0 && removeLink <= links.length - 1) {
+    if (removeLink > 0 && removeLink <= links.length) {
       links.splice(removeLink - 1, 1);
     } else {
       alert("There are no links to remove");
@@ -46,4 +46,3 @@ while (true) {
     break;
   }
 }
-
