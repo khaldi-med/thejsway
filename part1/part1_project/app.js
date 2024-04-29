@@ -8,32 +8,42 @@ while (true) {
   1 : Shoose links
   2 : Add a link
   3 : Remove a link
-  0 : Quit`
-  );
+  0 : Quit`);
   if (choosOp === option[0]) {
     alert(links);
-  }
-  else if (choosOp === option[1]) {
+  } else if (choosOp === option[1]) {
     const linkTitle = prompt("Enter the title: ");
     const linkUrl = prompt("Enter the url: ");
     const author = prompt("Enter the author: ");
 
-    let newLink = { link: `${linkTitle} ${linkUrl}. Author: ${author}`, index: 0 };
-    let newLinkIndex = `${newLink.index}: ${newLink.link}\n`;
+    let index = links.length +1;
+    let newLink = `${index}: ${linkTitle} ${linkUrl}. Author: ${author}\n`;
 
-    const httpProtocol = ["http://", "https://"]
-    if (!(linkUrl.startsWith(httpProtocol[0]) || linkUrl.startsWith(httpProtocol[1]))) {
+    const httpProtocol = ["http://", "https://"];
+    if (
+      !(
+        linkUrl.startsWith(httpProtocol[0]) ||
+        linkUrl.startsWith(httpProtocol[1])
+      )
+    ) {
       const newLinkUrl = `https://${linkUrl}`;
-      newLinkIndex = `${newLink.index}: ${linkTitle} ${newLinkUrl}. Author: ${author}\n`;
-      links.push(newLinkIndex)
+      const newLinkIndex = `${index}: ${linkTitle} ${newLinkUrl}. Author: ${author}\n`;
+      links.push(newLinkIndex);
+    } else {
+      links.push(newLink);
     }
-    else {
-      links.push(newLinkIndex)
+  } else if (choosOp === option[2]) {
+    const removeLink = prompt(
+      `Enter the index of the link to be removed (btween 1 and ${links.length}): `,
+    );
+
+    if (removeLink > 0 && removeLink <= links.length - 1) {
+      links.splice(removeLink - 1, 1);
+    } else {
+      alert("There are no links to remove");
     }
-  }
-  else if (choosOp === option[3]) {
+  } else if (choosOp === option[3]) {
     break;
   }
 }
-
 
