@@ -134,8 +134,31 @@ console.log(average(ratings(nolanMovieList)));
 ```
 * A function that operates on another function (taking it as a parameter or returning it) is called a higher-order function.
 
-* 
 
+### Interactive web pages
+
+* The structured representation of a web page is called DOM, short for Document Object Model. The DOM defines the structure of a page and a way to interact with it. This means it's a programming interface, or API (Application Programming Interface). JavaScript is the language of choice for interacting with the DOM.
+
+* A web page is a set of nested tags. You can represent a web page in a hierarchical form called a tree. The <html> element sets up your document as HTML and contains two sub-elements, <head> and <body>, which themselves contain several sub-elements.
+
+* Each entity in the tree is called a node. There are two types of nodes:
+	- HTML tags like <body> or <p>. These nodes are called element nodes and they can have subnodes, called child nodes or children.
+	- text nodes and do not have children. that match the textual content of the page
+
+* The DOM represents a web page as a hierarchy of objects, where each object corresponds to a node in the nested HTML element tree. DOM objects have properties and methods that you can manipulate with JavaScript.
+
+* Each object has a property called nodeType which indicates its type. The value of this property is document.ELEMENT_NODE for an "element" node (otherwise known as an HTML tag) and document.TEXT_NODE for a text node.
+
+* Each element-typed object in the DOM has a property called childNodes. This is an ordered collection containing all its child nodes as DOM objects. You can use this array-like collection to access the different children of a node.
+	- 
+The childNodes property of an element node is not a real JavaScript array, but rather a NodeList object. 
+
+```
+ // Access the first child of the body node
+console.log(document.body.childNodes[0]);
+```
+
+* Each DOM object has a property called parentNode that returns its parent node as a DOM object.
 
 
 
