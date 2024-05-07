@@ -150,7 +150,7 @@ console.log(average(ratings(nolanMovieList)));
 * Each object has a property called nodeType which indicates its type. The value of this property is document.ELEMENT_NODE for an "element" node (otherwise known as an HTML tag) and document.TEXT_NODE for a text node.
 
 * Each element-typed object in the DOM has a property called childNodes. This is an ordered collection containing all its child nodes as DOM objects. You can use this array-like collection to access the different children of a node.
-	- 
+	 
 The childNodes property of an element node is not a real JavaScript array, but rather a NodeList object. 
 
 ```
@@ -160,7 +160,7 @@ console.log(document.body.childNodes[0]);
 
 * Each DOM object has a property called parentNode that returns its parent node as a DOM object.
 
-
+* 
 
 
 

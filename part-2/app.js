@@ -1,12 +1,12 @@
 const showChild = (node, index) => {
-  if(node !== document.body){
+  if(node != document.body){
     console.log("Wrong node type");
   }
-  else if (index <= node.length){
-    node.childNodes[index];
+  else if (index < node.children.length && index > 0){
+    console.log(node.childNodes[index]);
   }
   else{
-    console.error("Incorrect index");
+    console.log("Incorrect index");
   }
 };
 
