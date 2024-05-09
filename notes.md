@@ -160,9 +160,9 @@ console.log(document.body.childNodes[0]);
 
 * Each DOM object has a property called parentNode that returns its parent node as a DOM object.
 
+* All DOM elements have a method called **getElementsByTagName()**. This returns, under the form of a NodeList object, a list of items that have the name of the tag that's passed as a parameter. 
+
 * 
-
-
 
 
 ### Web development 101
