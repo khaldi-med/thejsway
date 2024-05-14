@@ -161,8 +161,49 @@ console.log(document.body.childNodes[0]);
 * Each DOM object has a property called parentNode that returns its parent node as a DOM object.
 
 * All DOM elements have a method called **getElementsByTagName()**. This returns, under the form of a NodeList object, a list of items that have the name of the tag that's passed as a parameter. 
+ 
+* select element according to class: **getElementsByClassName()**.
+
+* To turn a NodeList object into an array, use the **Array.from()** method.
+
+* **getElementById()** that returns the element with the specified ID among all elements of the document.
+
+* **querySelectorAll()**
+
+* **querySelector()**
+
+* Since they use CSS selectors, querySelectorAll() and querySelector() could cover all your needs, but they might perform slower than the others.
+
+* The innerHTML property will retrieve the HTML content of your DOM element.
+  ```
+  // The HTML content of the DOM element with ID "content"
+  console.log(document.getElementById("content").innerHTML);
+  ```
+* The textContent property returns all the text content of a DOM element, without any HTML markup.
+  ```
+  // The textual content of the DOM element with ID "content"
+  console.log(document.getElementById("content").textContent);
+  ```
+* The getAttribute() method can be applied to a DOM element and will return the value of a given attribute.
+  ```
+    // Show href attribute of the first link
+    console.log(document.querySelector("a").getAttribute("href"));
+  ```
+* You can check for the existence of an attribute using the hasAttribute() method as seen in the example below.
+```
+if (document.querySelector("a").hasAttribute("target")) {
+  console.log("The first link has a target attribute.");
+   } else {
+     console.log("The first link does not have a target attribute."); // Will be shown
+     }
+```
 
 * 
+
+
+
+
+
 
 
 ### Web development 101
