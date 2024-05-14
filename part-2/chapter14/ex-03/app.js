@@ -1,10 +1,11 @@
 "use strict";
 
 const has = (id, someClass) => {
-  if (document.getElementById(id).classList.contains(someClass)) {
-    console.log(true);
-  } else if (!document.getElementById(id)) {
+  let element = document.getElementById(id);
+  if (!element) {
     console.log(`No element has id ${id}`);
+  } else if (element.classList.contains(someClass)) {
+    console.log(true);
   } else {
     console.log(false);
   }
