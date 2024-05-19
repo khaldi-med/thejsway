@@ -1,17 +1,29 @@
 "use strict";
 
-const has = (id, someClass) => {
-  let element = document.getElementById(id);
-  if (!element) {
-    console.log(`No element has id ${id}`);
-  } else if (element.classList.contains(someClass)) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
-};
+"use strict";
 
-has("saxophone", "woodwind");
-has("saxophone", "brass");
-has("trumpet", "brass");
-has("contrabass", "chordophone");
+const words = [{
+    term: "Procrastination",
+    definition: "Avoidance of doing a task that needs to be accomplished",
+  },
+  {
+    term: "Tautology",
+    definition: "logical argument constructed in such a way that it is logically irrefutable",
+  },
+  {
+    term: "Oxymoron",
+    definition: "figure of speech that juxtaposes elements that appear to be contradictory",
+  },
+];
+
+const dictionaryList = document.createElement("dl");
+dictionaryList.id = "dictionary";
+document.getElementById("content").appendChild(dictionaryList);
+
+const dictionary = words.forEach((word) =>
+  document.getElementById("dictionary")
+  .insertAdjacentHTML("beforeend",
+    ` <dt><strong>${word.term}</strong></dt>
+                <dd> ${word.definition}</dd>
+                    `)
+);
