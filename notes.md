@@ -198,11 +198,58 @@ if (document.querySelector("a").hasAttribute("target")) {
      }
 ```
 
-* 
+* The **innerHTML** property can be used to change the content of an element within the DOM.
 
+* When using innerHTML, you put HTML content into strings. To keep your code readable and avoid mistakes, you should only use innerHTML to make small content changes. 
 
+* Use the textContent property to modify the text content of a DOM element. **document.querySelector("h3").textContent += " for programming";**
 
+* The setAttribute() method sets the value of an attribute of an element. You pass the name and value of the attribute as parameters.
+    - **document.querySelector("h3").setAttribute("id", "title");**
+    - **document.querySelector("h3").id = "title";**
 
+* You can use the classList property to add or remove classes from a DOM element!
+  ```
+  const titleElement = document.querySelector("h3"); // Grab the first h3
+  titleElement.classList.remove("beginning");        // Remove the class "beginning"
+  titleElement.classList.add("title");               // Add a class called "title"
+  console.log(titleElement);
+  ``` 
+* You'd create an element using the **createElement()** method. This method is used on the document object and takes the tag of the new element as a parameter. This method also returns the element created as an object 
+
+* Insert a new node in the DOM. The most common is to call the **appendChild()** method on the element that will be the future parent of the new node. The new node is added to the end of the list of child nodes of that parent.
+
+* you can create a textual node with the **createTextNode()** method. This node can then be added to the new element with **appendChild()**.
+
+* use the **insertBefore()** method. Called on the future parent, this method takes as parameters the new node and the node before which the new one will be inserted.
+
+```
+There is a method to more precisely define the position of inserted elements: insertAdjacentHTML(). Call it on an existing element and pass it the position and a string of HTML characters that represent the new content to be added. The new content's position should be either:
+
+beforebegin: before the existing element.
+afterbegin: inside the existing element, before its first child.
+beforeend: inside the existing element, after its last child.
+afterend: after the existing element.
+Here's how these positions translate relative to an existing <p> tag.
+
+<!-- beforebegin -->
+<p>
+  <!-- afterbegin -->
+    foo
+      <!-- beforeend -->
+      </p>
+      <!-- afterend -->
+```
+
+* A DOM element can be replaced with the replaceChild() method. This replaces a child node of the current element with another node. The new node and node-to-be-replaced are passed as parameters (in that order).
+
+* Lastly, you can delete a node called **removeChild()**, to which you'll pass the node-to-be-removed as a parameter. 
+
+* A better solution for accessing element styles is to use a function called **getComputedStyle()**. This function takes a DOM node as a parameter and returns an object that represents the element's style. You can then see the different CSS properties of the object.
+  - const paragraphStyle = getComputedStyle(document.getElementById("para"));
+      * console.log(paragraphStyle.fontStyle);
+
+* CSS properties that involve multiple words are written in camelCase when dealing with JavaScript. For example, font-family becomes fontFamily.
 
 
 
