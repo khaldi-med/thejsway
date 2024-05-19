@@ -1,9 +1,8 @@
 'use strict'
 
-const countElements = element => document.querySelectorAll("element").length
+document.getElementById('content').insertAdjacentHTML("afterend", '<p id="paragraph">Here is a more complete of <span id="link-placeholder">list</span> languages</p>');
 
-
-console.log(countElements("p")); // Should show 4
-console.log(countElements(".adjective")); // Should show 3
-console.log(countElements("p .adjective")); // Should show 3
-console.log(countElements("p > .adjective")); // Should show 2
+const listLink = document.createElement('a')
+listLink.textContent = "list"
+listLink.href = "https://en.wikipedia.org/wiki/List_of_programming_languages";
+document.getElementById('link-placeholder').replaceWith(listLink);
