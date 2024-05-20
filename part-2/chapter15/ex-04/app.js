@@ -1,29 +1,15 @@
 "use strict";
 
-"use strict";
 
-const words = [{
-    term: "Procrastination",
-    definition: "Avoidance of doing a task that needs to be accomplished",
-  },
-  {
-    term: "Tautology",
-    definition: "logical argument constructed in such a way that it is logically irrefutable",
-  },
-  {
-    term: "Oxymoron",
-    definition: "figure of speech that juxtaposes elements that appear to be contradictory",
-  },
-];
+const textColor = prompt("Enter the color for text: ")
+ const backColor = prompt("Enter the background color for pragraph: ")
 
-const dictionaryList = document.createElement("dl");
-dictionaryList.id = "dictionary";
-document.getElementById("content").appendChild(dictionaryList);
+const textStyle = document.body 
+textStyle.style.color = textColor
 
-const dictionary = words.forEach((word) =>
-  document.getElementById("dictionary")
-  .insertAdjacentHTML("beforeend",
-    ` <dt><strong>${word.term}</strong></dt>
-                <dd> ${word.definition}</dd>
-                    `)
-);
+const setBackgorund = Array.from(document.getElementsByClassName('text'));
+setBackgorund.forEach((div) => {
+    div.style.backgroundColor = backColor;
+});
+
+console.log(setBackgorund);
