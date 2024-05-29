@@ -14,13 +14,12 @@ const questions = [{
   },
 ];
 
-
 const divElement = document.getElementById("content");
 
-const textPage = questions.forEach((question) => {
+const textPage = questions.forEach((question, index) => {
   const pElement = document.createElement("p");
   divElement.appendChild(pElement);
-  pElement.textContent = question.statement;
+  pElement.innerHTML = `<b>Question ${index + 1}:</b> ${question.statement}`;
 
   const buttonElement = document.createElement("button");
   buttonElement.textContent = "Show answer";
