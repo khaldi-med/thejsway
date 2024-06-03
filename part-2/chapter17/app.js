@@ -10,3 +10,7 @@ usernameElement.addEventListener("focus", (e) => {
 usernameElement.addEventListener("blur", (e) => {
   document.getElementById("usernameHelp").textContent = "";
 });
+
+document.getElementById("confirmation").addEventListener("change", e => {
+  console.log(`Email confirmation request: ${e.target.checked}`);
+});
