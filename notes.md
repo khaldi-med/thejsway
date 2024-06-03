@@ -251,6 +251,39 @@ Here's how these positions translate relative to an existing <p> tag.
 
 * CSS properties that involve multiple words are written in camelCase when dealing with JavaScript. For example, font-family becomes fontFamily.
 
+* To add more interactivity, the page should react to the user's actions. This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with a user.
+
+* Called on a DOM element, the addEventListener() method adds a handler for a particular event. This method takes as parameter the event type and the associated function. This function gets called whenever an event of the corresponding type appears for the DOM element.
+
+
+* In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the **removeEventListener()** on the element, passing as a parameter the function which used to handle the event.
+
+  > buttonElement.removeEventListener("click", showMessage);
+
+* This can only work if the handler function is not anonymous.
+
+* Page loading:
+  Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the load event produced by the window object (which represents the browser window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren’t fully loaded.
+
+  The following code displays a message in the console once the page is fully loaded.
+   >  window.addEventListener("load", e => {
+      > console.log("The page has been loaded!");
+
+
+* The DOM represents a web page as a hierarchy of nodes. Events triggered on a child node are going to get triggered on the parent node, then the parent node of the parent node, up until the root of the DOM (the document variable). This is called event propagation.
+
+  > by calling the stopPropagation() method on the Event object from an event handler. This is useful to avoid the same event being handled multiple times.
+
+* Most of the user actions on a page are associated to a default behavior. Clicking on a link navigates to the link target
+  * Calling the **preventDefault()** method on an Event object cancels the default behavior associated with the action that triggered the event.
+
+
+
+
+
+
+
+
 
 
 ### Web development 101
@@ -376,6 +409,7 @@ The JavaScript language offers native support for the JSON format:
 	- These methods can also handle JSON arrays.
 
 * The json() method of the HTTP Response object returns a promise that resolves with the result of parsing the response text as JSON. 
+
 
 
 
