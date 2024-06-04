@@ -277,9 +277,10 @@ Here's how these positions translate relative to an existing <p> tag.
 * Most of the user actions on a page are associated to a default behavior. Clicking on a link navigates to the link target
   * Calling the **preventDefault()** method on an Event object cancels the default behavior associated with the action that triggered the event.
 
+* When a text zone is selected, it becomes the focused area of the form. 
+  * **a focus event and blur use it with addEventListener().** 
 
-
-
+* 
 
 
 
