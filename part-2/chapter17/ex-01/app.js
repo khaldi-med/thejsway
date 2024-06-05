@@ -1,0 +1,6 @@
+/* Password checker */
+
+"use strict";
+
+
+
