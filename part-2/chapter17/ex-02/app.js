@@ -1,6 +1,5 @@
 "use strict";
 
-Character list.Each house has a name and a code
 const houses = [{
     code: "ST",
     name: "Stark",
@@ -19,7 +18,6 @@ const houses = [{
   },
 ];
 
-// Return an array of characters belonging to a house
 const getCharacters = (houseCode) => {
   switch (houseCode) {
     case "ST":
@@ -31,10 +29,18 @@ const getCharacters = (houseCode) => {
     case "TA":
       return ["Aerys", "Daenerys", "Viserys"];
     default:
-      return []; // Empty array
+      return [];
   }
 };
 
-const showHouse = document.getElementById("house").insertAdjacentHTML("beforeend", houses.forEach(house => {
-  return `<option value="${house.code}">${house.name}</option>`
-}))
+const showHouse = houses.forEach(house => {
+  const setChoice = document.createElement('option')
+  const content = document.getElementById("house").appendChild(setChoice)
+  content.value = house.code
+  content.textContent = house.name
+})
+
+console.log(showHouse);
+
+
+
