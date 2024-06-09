@@ -33,14 +33,25 @@ const getCharacters = (houseCode) => {
   }
 };
 
-const showHouse = houses.forEach(house => {
-  const setChoice = document.createElement('option')
-  const content = document.getElementById("house").appendChild(setChoice)
-  content.value = house.code
-  content.textContent = house.name
-})
 
-console.log(showHouse);
+const setHousesList = houses.forEach((house) => {
+  const setChoice = document.createElement("option");
+  const content = document.getElementById("house").appendChild(setChoice);
+  content.value = house.code;
+  content.textContent = house.name;
+});
 
+const selectList = document.querySelector("select");
 
+selectList.addEventListener("change", (e) => {
+  const selectedHouse = e.target.value;
+  const character = getCharacters(selectedHouse);
 
+  const list = document.getElementById("characters");
+  list.innerHTML = "";
+  character.forEach((character) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = character;
+    list.appendChild(listItem);
+  });
+});
