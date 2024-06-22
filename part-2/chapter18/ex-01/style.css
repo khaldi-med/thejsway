@@ -1,5 +1,17 @@
 body {
         background-color: #066506;
-        color: white;
+        color: #f5d232;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+div {
+        display: inline-grid;
+
+}
+
+button {
+        background-color: #4c4794;
+        color: #fbfefb;
+        border-radius: 5px;
+        padding: 10px;
+}
