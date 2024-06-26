@@ -1,4 +1,11 @@
+body {
+        background-color: #066506;
+        color: #f5d232;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 #ball {
-	position: relative;
-	left: 0px;
+        position: relative;
+        left: 0px;
+	border-radius: 50%;
 }
