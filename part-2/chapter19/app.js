@@ -1,23 +1,16 @@
-const showChild = (node, index) => {
-  if(node != document.body){
-    console.log("Wrong node type");
-  }
-  else if (index < node.children.length && index > 0){
-    console.log(node.childNodes[index]);
-  }
-  else{
-    console.log("Incorrect index");
-  }
-};
+"use strict";
 
-// Should show the h1 node
-showChild(document.body, 1);
+const button = document.getElementById("submitButton");
+const form = document.getElementById("content");
 
-// Should show "Incorrect index"
-showChild(document.body, -1);
-
-// Should show "Incorrect index"
-showChild(document.body, 8);
-
-// Should show "Wrong node type"
-showChild(document.body.childNodes[0], 0);
+button.addEventListener("click", () => {
+  const lable = document.createElement("lable");
+  lable.setAttribute("class", "link");
+  lable.setAttribute("for", "link");
+  lable.textContent = "link";
+  const inputElement = document.createElement("input");
+  inputElement.setAttribute("type", "text");
+  inputElement.setAttribute("name", "title");
+  form.appendChild(lable);
+  form.appendChild(inputElement);
+});
