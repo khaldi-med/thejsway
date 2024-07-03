@@ -1,4 +1,5 @@
 "use strict";
+const prompt = require("prompt-sync")();
 
 const option = ["1", "2", "3", "0"];
 let links = [];
@@ -34,7 +35,7 @@ while (true) {
     }
   } else if (choosOp === option[2]) {
     const removeLink = prompt(
-      `Enter the index of the link to be removed (btween 1 and ${links.length})`,
+      `Enter the index of the link to be removed (btween 1 and ${links.length})`
     );
 
     if (removeLink > 0 && removeLink <= links.length) {

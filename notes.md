@@ -1,4 +1,6 @@
 
+> #FFD131 css color
+
 * A variable is an information storage area.
 
 * languages, like C or Java, require variable types to always be defined. This is called **static typing**.
@@ -40,9 +42,9 @@
 ```
 ```
 The JavaScript language has many predefined objects serving various purposes. We have already encountered some of them:
-	- The console object gives access to the environment console. console.log() is actually a method call.
+- The console object gives access to the environment console. console.log() is actually a method call.
 
-	- The Math object contains many mathematical properties. For example, Math.PI returns an approximate value of the number π (Pi) and the Math.random() function returns a random number between 0 and 1.
+- The Math object contains many mathematical properties. For example, Math.PI returns an approximate value of the number π (Pi) and the Math.random() function returns a random number between 0 and 1.
 ```
 
 * A JavaScript object literal is created by simply setting its properties within a pair of curly braces.
@@ -53,45 +55,45 @@ The JavaScript language has many predefined objects serving various purposes. We
 * Each item in an array is identified by a number called its **index** - an integer pointer that identifies an element of the array. 
 
 * Iterating over an array:
-	- Use a for loop 
-	- Use forEach() method
-	- Use the for-of loop -> 
-				for (const myElement of myArray) {
-  				// Use myElement to access each array element one by one
-				}
+- Use a for loop 
+- Use forEach() method
+- Use the for-of loop -> 
+for (const myElement of myArray) {
+	// Use myElement to access each array element one by one
+}
 
 * You add a new item to an array with the push() method. --> end of the array.
-* unshift() method --> at the beginning of an array.
-* remove the last element of an array using the pop()
+	* unshift() method --> at the beginning of an array.
+	* remove the last element of an array using the pop()
 * remove the first element of an array using the shift()
-* use the splice() method with two parameters: the first one is the index from which to begin removing, and the second one is the number of elements to remove. 
+	* use the splice() method with two parameters: the first one is the index from which to begin removing, and the second one is the number of elements to remove. 
 
 ### Strings
 
-* It's important to understand that once created, a string value never changes: strings are immutable in JavaScript.
+	* It's important to understand that once created, a string value never changes: strings are immutable in JavaScript.
 
-* The JavaScript method Array.from() can be used to turn a string into an array. 
+	* The JavaScript method Array.from() can be used to turn a string into an array. 
 
 
 ### OOP
 
-* Most object-oriented languages use classes as abstractions for the ideas or concepts manipulated by a program. A class is used to create objects representing a concept. It offers a convenient syntax to give both data and behavior to these objects.
+	* Most object-oriented languages use classes as abstractions for the ideas or concepts manipulated by a program. A class is used to create objects representing a concept. It offers a convenient syntax to give both data and behavior to these objects.
 
-```
-class MyClass {
-  constructor(param1, param2, ...) {
-    this.property1 = param1;
-    this.property2 = param2;
-    // ...
-  }
-  method1(/* ... */) {
-    // ...
-  }
-  method2(/* ... */) {
-    // ...
-  }
-  // ...
-}
+	```
+	class MyClass {
+		constructor(param1, param2, ...) {
+			this.property1 = param1;
+			this.property2 = param2;
+			// ...
+		}
+		method1(/* ... */) {
+			// ...
+		}
+		method2(/* ... */) {
+			// ...
+		}
+		// ...
+	}
 
 const myObject = new MyClass(arg1, arg2, ...);
 myObject.method1(/* ... */);
@@ -118,7 +120,6 @@ myObject.method1(/* ... */);
 
 * JavaScript is a multi-paradigm language: you can write programs using an imperative, object-oriented or functional programming style.
 
-```
 const titles = movies => movies.map(movie => movie.title);
 const byNolan = movie => movie.director === "Christopher Nolan";
 const filter = (movies, func) => movies.filter(func);
@@ -131,7 +132,8 @@ const nolanMovieList = filter(movieList, byNolan);
 console.log(nolanMovieList.length);
 console.log(titles(filter(movieList, goodRating)));
 console.log(average(ratings(nolanMovieList)));
-```
+
+
 * A function that operates on another function (taking it as a parameter or returning it) is called a higher-order function.
 
 
@@ -194,8 +196,7 @@ console.log(document.body.childNodes[0]);
 if (document.querySelector("a").hasAttribute("target")) {
   console.log("The first link has a target attribute.");
    } else {
-     console.log("The first link does not have a target attribute."); // Will be shown
-     }
+     console.log("The first link does not have a target attribute.");}
 ```
 
 * The **innerHTML** property can be used to change the content of an element within the DOM.
@@ -208,7 +209,7 @@ if (document.querySelector("a").hasAttribute("target")) {
     - **document.querySelector("h3").setAttribute("id", "title");**
     - **document.querySelector("h3").id = "title";**
 
-* You can use the classList property to add or remove classes from a DOM element!
+* You can use the **classList** property to add or remove classes from a DOM element!
   ```
   const titleElement = document.querySelector("h3"); // Grab the first h3
   titleElement.classList.remove("beginning");        // Remove the class "beginning"
@@ -280,7 +281,77 @@ Here's how these positions translate relative to an existing <p> tag.
 * When a text zone is selected, it becomes the focused area of the form. 
   * **a focus event and blur use it with addEventListener().** 
 
+```
+Accessing form fields
+A <form> tag corresponds to a DOM element. This element has an elements property that pulls together all the form input fields. You can use this property to access a field via its name attribute or by its index (order of appearance in the form).
+
+The below example shows some information on the input fields of our example form:
+
+  // Show some info about the first form element
+    const formElement = document.querySelector("form");
+    console.log(`Number of fields: ${formElement.elements.length}`); // 10
+    console.log(formElement.elements[0].name);       // "username"
+    console.log(formElement.elements.password.type); // "password"
+```
+
+* A JavaScript regular expression is defined by placing its pattern between a pair of / characters. It's an object whose test() method checks matches between the pattern and the string passed as a parameter. If a match is detected, this method returns true, and false otherwise.
+
+* Here's a possible regular expression (among many others) to test it against: **/ /.+@.+\..+/./**
+
+* **setInterval()** triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can be used to further modify it.
+	```
+	// Set up a repeated action
+	const intervalId = setInterval(callbackFunction, timeBetweenEachCall);
+	```
+* The **clearInterval()** function lets you cut off repeated code execution. It takes as a parameter the ID of the action set by the call to **setInterval()**.
+
+* The **setTimeout()** function lets you execute a function once after a particular delay, expressed in milliseconds.
+
+	* // Execute an action once, after a delay
+	- setTimeout(callbackFunction, timeBeforeCall);
+
+* Don’t use **Number()** to convert a string with "px" into a numerical value. This won’t work, and you'll get a NaN value (Not a Number) as a result!
+
+*  The requestAnimationFrame() function lets you ask the browser to execute a function as soon as possible, which updates the animation.
+	```
+	 const animate = () => {
+    	 // Animation code
+    	 // ...
+    	 // At end of animation, request another one
+	 animationId = requestAnimationFrame(animate);
+	 };
+
+	// Animation start
+	let animationId = requestAnimationFrame(animate);
+	```
+
+* The cancelAnimationFrame() function stops the animation and takes the ID of the animation set by a prior call to requestAnimationFrame().
+
+ ```
+Here's how you might want to approach your decision:
+
+Use setInterval() if the animation isn’t in real-time and should just happen at regular intervals.
+Favor CSS if the animation happens in real-time and is simple enough to be managed with this technique.
+Use requestAnimationFrame() for any other case.
+```
+
 * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
