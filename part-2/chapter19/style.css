@@ -1,42 +1,42 @@
 body {
-        background-color: #FFD131;
+  background-color: #ffd131;
 }
 
 /* Main link element (<div> tag) */
 .link {
-        background: white;
-        padding: 10px;
-        margin-bottom: 10px;
+  background: rgb(252, 252, 252);
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 /* Link title (<a> tag) */
 .linkTitle {
-        color: #428bca;
-        text-decoration: none;
-        margin-right: 5px;
+  color: #428bca;
+  text-decoration: none;
+  margin-right: 5px;
 }
 
 .linkTitle:hover {
-        text-decoration: none;
+  text-decoration: none;
 }
 
 /* Link URL (<span> tag) */
 .linkUrl {
-        font-weight: normal;
-        font-size: 80%;
+  font-weight: normal;
+  font-size: 80%;
 }
 
 /* Link headline containing title & URL (<h4> tag) */
 .linkHeadline {
-        margin: 0;
+  margin: 0;
 }
 
 /* Link author (<span> tag) */
 .linkAuthor {
-        font-weight: normal;
-        font-size: 80%;
+  font-weight: normal;
+  font-size: 80%;
 }
 
 .linkForm {
-        margin-bottom: 20px;
+  margin-bottom: 20px;
 }
