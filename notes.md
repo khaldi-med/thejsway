@@ -334,11 +334,7 @@ Use setInterval() if the animation isn’t in real-time and should just happen a
 Favor CSS if the animation happens in real-time and is simple enough to be managed with this technique.
 Use requestAnimationFrame() for any other case.
 ```
-
 * 
-
-
-
 
 
 
@@ -482,16 +478,16 @@ The JavaScript language offers native support for the JSON format:
 
 * The json() method of the HTTP Response object returns a promise that resolves with the result of parsing the response text as JSON. 
 
+### Database 
 
+* MongoDB is a NoSQL database that stores the data in BSON format. The full form of BSON is Binary JSON and it is quite similar to JSON
+  (JavaScript Object Notation).
 
+* REST APIs, also known as RESTful endpoints, are the way the modern internet works in most cases. In the Internet, there is a client which
+  nowadays is mostly a browser or a mobile app.
 
-
-
-
-
-
-
-
+* There are four basic REST APIs - POST, GET, PUT, and DELETE. They are used to perform the CRUD (Create, Read, Update, Delete) operation on a
+  database.
 
 
 
