@@ -370,7 +370,7 @@ Use requestAnimationFrame() for any other case.
 
 * The main HTTP methods are GET to access a resource and POST to push some information on the server. Other ones exist, such as HEAD, PUT or DELETE.
 
-``
+```
 The HTTP status codes belong to different families, depending on their first digit.
 
 Family	Meaning	Examples
@@ -379,7 +379,7 @@ Family	Meaning	Examples
 3xx	Redirection	
 4xx	Client error	404: resource not found
 5xx	Server error	500: internal server error
-``
+```
 
 * The set of technologies enabling the creation of web applications is codenamed AJAX (Asynchronous JavaScript and XML). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 
