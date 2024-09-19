@@ -334,65 +334,35 @@ Use setInterval() if the animation isn’t in real-time and should just happen a
 Favor CSS if the animation happens in real-time and is simple enough to be managed with this technique.
 Use requestAnimationFrame() for any other case.
 ```
-* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### Web development 101
 
-```
-Network protocols are sets of rules or standards used by devices to communicate with each other over a network.
+* Network protocols are sets of rules or standards used by devices to communicate with each other over a network.
+    - Some examples of network protocols are:
+        * HTTP, used for web browsing
+        * SMTP, used for email
+        * FTP, used for file transfers
 
-Some examples of network protocols are:
-
-HTTP, used for web browsing
-SMTP, used for email
-FTP, used for file transfers
-```
 * One model that categorizes network protocols into layers is the TCP/IP model. It has 4 layers:
-|
-> application layer: The Application Layer relies on protocols like TCP/UDP in the Transport Layer.
-| 
-|
-> tronsport layer: This layer's job is to provide reliable data transfer between two devices.
-|	* The most commonly used Transport Layer protocols are:
-|		- TCP, for reliable delivery of data
-|		- UDP, for fast but less reliable delivery
-|
-|
-> internet layer: It is responsible for routing data across different networks to get it to the right destination.
-|		- The fundamental protocol in this layer is the Internet Protocol (IP). But there are others too:
-|
-|		- ICMP, used by programs like ping to test connectivity
-|		- ARP, used to map IP addresses to MAC addresses
-|
-|
-> link layer --> It is responsible for sending data over a physical medium, such as a cable or a wireless connection.
+    
+    > application layer: The Application Layer relies on protocols like TCP/UDP in the Transport Layer.
+    
+    > tronsport layer: This layer's job is to provide reliable data transfer between two devices.
+        * The most commonly used Transport Layer protocols are:
+		    - TCP, for reliable delivery of data
+		    - UDP, for fast but less reliable delivery
+    
+    > internet layer: It is responsible for routing data across different networks to get it to the right destination.
+		- The fundamental protocol in this layer is the Internet Protocol (IP). But there are others too:
+		- ICMP, used by programs like ping to test connectivity
+		- ARP, used to map IP addresses to MAC addresses
+
+    > link layer --> It is responsible for sending data over a physical medium, such as a cable or a wireless connection.
 	Some examples of Link Layer protocols are:
 		- Ethernet
 		- Wi-Fi
 		- Bluetooth	
-
-
-
-
-
 
 * To be online, a web site has to be published on a server. This is a special kind of machine whose task is to listen and answer to the demands of clients. A server that publishes resources on the Web is logically called a web server.
 
@@ -400,7 +370,7 @@ FTP, used for file transfers
 
 * The main HTTP methods are GET to access a resource and POST to push some information on the server. Other ones exist, such as HEAD, PUT or DELETE.
 
-``` 
+``
 The HTTP status codes belong to different families, depending on their first digit.
 
 Family	Meaning	Examples
@@ -409,7 +379,7 @@ Family	Meaning	Examples
 3xx	Redirection	
 4xx	Client error	404: resource not found
 5xx	Server error	500: internal server error
-```
+``
 
 * The set of technologies enabling the creation of web applications is codenamed AJAX (Asynchronous JavaScript and XML). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 
