@@ -1,6 +1,6 @@
 "use strict";
 
-class link {
+class Link {
   constructor(title, url, author) {
     let urlFormat = url;
     if (!urlFormat.startsWith("http://") && !urlFormat.startsWith("https://")) {
@@ -33,14 +33,13 @@ class link {
 
     const authorElement = document.createElement("span");
     authorElement.setAttribute("class", "linkAuthor");
-    authorElement.textContent = "submitter: " + this.author;
+    authorElement.textContent = "submitted by " + this.author;
     linkElement.appendChild(authorElement);
     return linkElement;
   }
 }
 
 const form = document.getElementById("content");
-
 const addNewLink = document.getElementById("submitButton");
 
 let areaInput = () => {
@@ -79,22 +78,53 @@ let areaInput = () => {
   submitButton.setAttribute("id", "submit");
 
   divElement.appendChild(submitButton);
+
   submitButton.addEventListener("click", () => {
     const title = document.getElementById("title").value;
     const url = document.getElementById("url").value;
     const author = document.getElementById("author").value;
-    const newLink = new link(title, url, author);
-    form.appendChild(newLink.toHTML());
-    addNewLink.disabled = false;
+
+    if (title && url && author) {
+      const newLink = new Link(title, url, author);
+      form.appendChild(newLink.toHTML());
+
+      // Clear the form inputs
+      titleInput.value = "";
+      urlInput.value = "";
+      authorInput.value = "";
+
+      // Display a success message
+
+      const messageDiv = document.createElement("span");
+      messageDiv.setAttribute("class", "message");
+      messageDiv.textContent = "Link added successfully!";
+      messageDiv.style.color = "green";
+      messageDiv.style.fontWeight = "bold";
+      messageDiv.style.background = "rgb(133, 230, 133)";
+
+      form.appendChild(messageDiv);
+      setTimeout(() => {
+        form.removeChild(messageDiv);
+      }, 2000);
+
+      // Enable the "Add New Link" button again
+      addNewLink.disabled = false;
+
+      // Remove the input form after submission
+      form.removeChild(divElement);
+    } else {
+      alert("Please fill in all fields.");
+    }
   });
 
-  container[container.length - 2].appendChild(divElement);
+  form.appendChild(divElement);
+  return divElement;
 };
 
 addNewLink.addEventListener("click", areaInput);
 
-let heroUrl = new link("Hacker", "hero.com", "HeroMan");
+let heroUrl = new Link("Hacker", "hero.com", "HeroMan");
 form.appendChild(heroUrl.toHTML());
 
-let bookUrl = new link("Book", "book.com", "BookMan");
+let bookUrl = new Link("Book", "book.com", "BookMan");
 form.appendChild(bookUrl.toHTML());
