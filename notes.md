@@ -447,6 +447,16 @@ The JavaScript language offers native support for the JSON format:
 	- These methods can also handle JSON arrays.
 
 * The json() method of the HTTP Response object returns a promise that resolves with the result of parsing the response text as JSON. 
+    
+```
+HTTP, which stands for HyperText Transfer Protocol, is the technical foundation of the World Wide Web. It is a protocol, a language that allows two machines to communicate with each other. HTTPS is the secured version of HTTP where exchanged data is encrypted.
+
+Technically speaking, HTTP is a pretty simple protocol based on textual commands.
+```
+* URL, or Uniform Resource Locator. A URL uniquely describes a web resource and the way to request it.
+* AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
+
+
 
 ### Database 
 
