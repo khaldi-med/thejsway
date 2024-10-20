@@ -3,7 +3,7 @@
 fetch("https://swapi.dev/api/planets")
 	.then(response => response.json())
 	.then(planets => {
-		planets.map(plant => console.log(plant.name));
+		console.log(planets));
 	})
 .catch(err => {
     console.error(err.message);
