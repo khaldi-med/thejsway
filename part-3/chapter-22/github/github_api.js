@@ -1,10 +1,8 @@
 'use strict'
 
-fetch("http://api.openweathermap.org/data/2.5/weather?q=Bordeaux,fr&appid=YOUR_API_KEY&units=metric")
+fetch("https://api.github.com/users")
 .then(respones => respones.json())
-.then(content => console.log(content))
-let info = document.getElementById("info");
-info.textContent = "hello";
+.then(user => console.log(user))
 
 .catch(err => {
 	console.error(err.message);
