@@ -1,8 +1,9 @@
 'use strict'
 
 const formElemnt = document.addEventListener("submit", e => {
-e.apperDefault();
-})
+    e.apperDefault();
+    const users = element.login.valu
+
 fetch("https://api.github.com/users")
 .then(respones => respones.json())
 .then(user => console.log(user))
