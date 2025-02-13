@@ -13,7 +13,7 @@ formElement.addEventListener("submit", (e) => {
       picture.alt = user.name;
       picture.style.width = "150px";
       picture.style.height = "150px";
-      //Name  
+      //Name
       const elementInfos = document.createElement("h3");
       elementInfos.textContent = user.name;
       //Append
@@ -21,7 +21,6 @@ formElement.addEventListener("submit", (e) => {
       infos.innerHTML = "";
       infos.appendChild(picture);
       infos.appendChild(elementInfos);
-
     })
     .catch((err) => {
       console.error(err.message);
