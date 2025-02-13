@@ -1,16 +1,28 @@
-'use strict'
+"use strict";
 
-const formElemnt = document.addEventListener("submit", e => {
-    e.perventDefault();
-    const users = element.login.valu
+const formElement = document.querySelector("form");
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const login = formElement.elements.login.value;
+  fetch(`https://api.github.com/users/${login}`)
+    .then((response) => response.json())
+    .then((user) => {
+      //Image
+      const picture = document.createElement("img");
+      picture.src = user.avatar_url;
+      picture.alt = user.name;
+      picture.style.width = "150px";
+      picture.style.height = "100px";
+      //Name  
+      const elementInfos = document.createElement("p");
+      elementInfos.textContent = user.name;
+      //Append
+      const infos = document.getElementById("infos");
+      infos.appendChild(picture);
+      infos.appendChild(elementInfos);
 
-fetch("https://api.github.com/users")
-.then(respones => respones.json())
-.then(user => console.log(user))
-
-.catch(err => {
-	console.error(err.message);
+    })
+    .catch((err) => {
+      console.error(err.message);
+    });
 });
-
-
-
