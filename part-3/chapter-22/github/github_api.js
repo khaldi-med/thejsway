@@ -14,7 +14,7 @@ formElement.addEventListener("submit", (e) => {
       picture.style.width = "150px";
       picture.style.height = "150px";
       //Name  
-      const elementInfos = document.createElement("p");
+      const elementInfos = document.createElement("h3");
       elementInfos.textContent = user.name;
       //Append
       const infos = document.getElementById("infos");
