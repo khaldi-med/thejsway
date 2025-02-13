@@ -12,12 +12,13 @@ formElement.addEventListener("submit", (e) => {
       picture.src = user.avatar_url;
       picture.alt = user.name;
       picture.style.width = "150px";
-      picture.style.height = "100px";
+      picture.style.height = "150px";
       //Name  
       const elementInfos = document.createElement("p");
       elementInfos.textContent = user.name;
       //Append
       const infos = document.getElementById("infos");
+      infos.innerHTML = "";
       infos.appendChild(picture);
       infos.appendChild(elementInfos);
 
