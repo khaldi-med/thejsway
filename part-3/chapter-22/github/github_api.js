@@ -1,7 +1,7 @@
 'use strict'
 
 const formElemnt = document.addEventListener("submit", e => {
-    e.apperDefault();
+    e.perventDefault();
     const users = element.login.valu
 
 fetch("https://api.github.com/users")
