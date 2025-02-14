@@ -454,8 +454,18 @@ HTTP, which stands for HyperText Transfer Protocol, is the technical foundation 
 Technically speaking, HTTP is a pretty simple protocol based on textual commands.
 ```
 * URL, or Uniform Resource Locator. A URL uniquely describes a web resource and the way to request it.
+
 * AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 
+* In a synchronous exchange, the asker waits until he gets the needed info. A telephone call is an example of a synchronous exchange.
+
+* On the contrary, the asker in an asynchronous exchange can do something else while waiting for the completion of his request. Email is an example of an asynchronous exchange.
+
+* Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on cross-origin resource sharing (CORS).
+
+* Since synchronous requests block the calling process until their result is received, only asynchronous HTTP requests should be used when building a web application.
+
+* A JavaScript promise is an object with then() and catch() methods. then() is called when the promise is fulfilled. It takes the operation result as a parameter. On the contrary, catch() is called when the promise is rejected.
 
 
 ### Database 
