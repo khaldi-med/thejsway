@@ -1,3 +1,4 @@
+# The Js Way Book
 
 > #FFD131 css color
 
@@ -467,6 +468,12 @@ Technically speaking, HTTP is a pretty simple protocol based on textual commands
 
 * A JavaScript promise is an object with then() and catch() methods. then() is called when the promise is fulfilled. It takes the operation result as a parameter. On the contrary, catch() is called when the promise is rejected.
 
+
+### Node Js
+
+* The Node platform provides a way to structure an application under the form of a package.
+
+* 
 
 ### Database 
 
