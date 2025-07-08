@@ -1,10 +1,5 @@
 'use strict';
 
-const multer = require('multer');
-
-// Access the exported service
-const upload = multer();
-
 // Load the Express package as a module
 const express = require('express');
 
