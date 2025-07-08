@@ -473,7 +473,26 @@ Technically speaking, HTTP is a pretty simple protocol based on textual commands
 
 * The Node platform provides a way to structure an application under the form of a package.
 
-* 
+### web server
+
+* a web server is a machine dedicated to publishing resources on the Web. 
+
+* In computer programming, a framework provides a standard way to design and structure an application. It typically takes care of many low-level details so that the developer can concentrate on high-level, business-related tasks.
+
+`
+* Enabling CORS on an Express web server is done by adding the following code in your main application file.
+
+// Enable CORS (see https://enable-cors.org/server_expressjs.html)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+This is an example of a middleware: code that runs somewhere between the reception of the HTTP request and the sending of the HTTP response.
+`
 
 ### Database 
 
