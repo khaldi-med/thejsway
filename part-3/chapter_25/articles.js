@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // Load the Express package as a module
 const express = require('express');
