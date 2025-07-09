@@ -10,6 +10,15 @@ const multer = require("multer");
 // Access the exported service
 const upload = multer();
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 // Handle form data submission to the "/animals" route
 app.post("/animals", upload.array(), (request, response) => {
   const name = request.body.name;
@@ -17,6 +26,3 @@ app.post("/animals", upload.array(), (request, response) => {
   response.send(`Hello ${name}, you voted: ${vote}`);
 });
 
-const listener = app.listen(process.env.PORT || 3000, () => {
-  console.log(`Your app is listening on port ${listener.address().port}`);
-});
