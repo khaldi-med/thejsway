@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // Load the Express package as a module
 const express = require('express');
@@ -6,34 +6,38 @@ const express = require('express');
 // Access the exported service
 const app = express();
 
-const articles = [
-  { id: 1, title: 'First article', content: 'Hello World!' },
-  {
-    id: 2,
-    title: 'Lorem ipsum',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit mauris ac porttitor accumsan. Nunc vitae pulvinar odio, auctor interdum dolor. Aenean sodales dui quis metus iaculis, hendrerit vulputate lorem vestibulum.',
-  },
-  {
-    id: 3,
-    title: 'Lorem ipsum in French',
-    content:
-      'J’en dis autant de ceux qui, par mollesse d’esprit, c’est-à-dire par la crainte de la peine et de la douleur, manquent aux devoirs de la vie. Et il est très facile de rendre raison de ce que j’avance.',
-  },
-];
-
-// Return the articles list in JSON format
-app.get('/api/articles', (request, response) => {
-  response.json(articles);
+app.get("/hello", (request, response) => {
+  response.sendFile(`${__dirname}/views/hello.html`);
 });
 
-// Return a string for requests to the root URL ("/")
-app.get('/', (request, response) => {
-  response.send('Hello from Express!');
-});
+// Serve content of the "public" subfolder directly
+app.use(express.static("public"));
 
-// Start listening to incoming requests
-// If process.env.PORT is not defined, port number 3000 is used
+// const bodyParser = require('body-parser');
+// 
+// // Access the JSON parsing service
+// const jsonParser = bodyParser.json();
+// 
+// const cars = [
+//   {
+//     model: 'Peugeot',
+//     color: 'blue',
+//     registration: 2012,
+//     checkups: [2015, 2017],
+//   },
+//   {
+//     model: 'Citroën',
+//     color: 'white',
+//     registration: 1999,
+//     checkups: [2003, 2005, 2007, 2009, 2011, 2013],
+//   },
+// ];
+// 
+// app.post('/api/cars', jsonParser, (request, response) => {
+//   const cars = request.body;
+//   response.send(`You sent me a list of cars: ${JSON.stringify(cars)}`);
+// });
+
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
