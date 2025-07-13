@@ -1,0 +1,286 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main heading */
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 600;
+}
+
+/* Form container */
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Section headings */
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: 2px solid #ff6b6b;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Radio button containers */
+.radio-group {
+    margin-bottom: 20px;
+}
+
+/* Radio button styling */
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #6c5656;
+    cursor: pointer;
+}
+
+/* Label styling */
+label {
+    font-size: 1.1em;
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+label:hover {
+    color: #ff6b6b;
+}
+
+/* Radio button wrapper */
+.radio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.radio-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(248, 41, 41, 0.4);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Result message */
+#result {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#result:empty {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    
+    form {
+        padding: 25px;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+    
+    /* Mobile popup notification */
+    .popup-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+        transform: translateY(-100px);
+        font-size: 1em;
+        padding: 15px 20px;
+    }
+    
+    .popup-notification.show {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for form appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Success and error message styling */
+.success {
+    color: #28a745 !important;
+    background: #d4edda !important;
+    border: 1px solid #c3e6cb !important;
+}
+
+.error {
+    color: #dc3545 !important;
+    background: #f8d7da !important;
+    border: 1px solid #d69198 !important;
+}
+
+/* Popup notification styles */
+.popup-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 1000;
+    font-weight: 600;
+    font-size: 1.1em;
+    min-width: 300px;
+    max-width: 400px;
+    transform: translateX(450px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    backdrop-filter: blur(10px);
+    border-left: 5px solid transparent;
+}
+
+.popup-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.popup-notification.success {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    border-left-color: #2e7d32;
+}
+
+.popup-notification.error {
+    background: linear-gradient(135deg, #f44336, #e53935);
+    color: white;
+    border-left-color: #c62828;
+}
+
+.popup-notification .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.popup-notification .close-btn:hover {
+    opacity: 1;
+}
+
+.popup-notification .icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Progress bar for auto-dismiss */
+.popup-notification .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(189, 6, 6, 0.3);
+    border-radius: 0 0 10px 10px;
+    animation: progressBar 2s linear;
+}
+
+@keyframes progressBar {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Hide the old result element */
+#result {
+    display: none;
+}

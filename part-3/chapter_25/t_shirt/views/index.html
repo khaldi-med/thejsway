@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>T-Shirt Store</title>
+   <!--  <link rel="stylesheet" href="./style.css"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h2>Buy a new T-shirt</h2>
+    <form id="tshirtForm">
+      <div class="radio-group">
+        <h3>Size (select one):</h3>
+        <div class="radio-item">
+          <input type="radio" name="t_shirt" id="medium" value="Medium" />
+          <label for="medium">Medium (M)</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="t_shirt" id="large" value="Large" />
+          <label for="large">Large (L)</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="t_shirt" id="small" value="Small" />
+          <label for="small">Small (S)</label>
+        </div>
+      </div>
+      
+      <div class="radio-group">
+        <h3>Color (select one):</h3>
+        <div class="radio-item">
+          <input type="radio" name="color" id="blue" value="Blue" />
+          <label for="blue">Blue</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="color" id="yellow" value="Yellow" />
+          <label for="yellow">Yellow</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="color" id="green" value="Green" />
+          <label for="green">Green</label>
+        </div>
+      </div>
+      
+      <input type="submit" value="🛒 Buy T-Shirt" />
+    </form>
+    <p id="result"></p>
+    <script src="../public/script.js"></script>
+  </body>
+</html>
