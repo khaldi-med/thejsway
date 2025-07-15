@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>T-Shirt Store</title>
+    <!--  <link rel="stylesheet" href="./style.css"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h2>Add new article</h2>
+    <form id="article">
+      <div>
+        <label for="name">Title: </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter the title"
+        />
+      </div>
+      <br />
+      <div>
+        <textarea name="article" id="article" rows="4" cols="50"></textarea>
+      </div>
+      <br />
+      <input type="submit" value="add" />
+    </form>
+    <p id="result"></p>
+    <script src="script.js"></script>
+  </body>
+</html>
