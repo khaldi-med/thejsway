@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 // Handle form submission
-document.querySelector("form").addEventListener("submit", (e) => {
+document.getElementById('country').addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent default form submission
   // Get form data
   const formData = new FormData(e.target);
@@ -12,10 +12,10 @@ document.querySelector("form").addEventListener("submit", (e) => {
     console.log(`Key: ${key}, Value: ${value}`); // Log each key-value pair
   }
   // Send data to server
-  fetch("/submit", {
-    method: "POST",
+  fetch('/submit', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   })
@@ -26,9 +26,10 @@ document.querySelector("form").addEventListener("submit", (e) => {
       return response.json();
     })
     .then((result) => {
-      document.getElementById("result").textContent = result.message;
+      document.getElementById('result').textContent = result.message;
+      e.target.reset();
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.error('Error:', error);
     });
 });
