@@ -2,10 +2,13 @@
 
 // Load the Express package as a module
 const express = require('express');
-// const path = require('path');
- 
-// Access the exported service
+const multer = require('multer');
+const bodyParser = require("body-parser")
+
+
 const app = express();
+const upload = multer();
+const parse = bodyParser.json();
 
 // Enable CORS for all routes
 app.use((req, res, next) => {
@@ -17,26 +20,24 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to parse form data
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Parse JSON bodies
+app.use(parse);
 
 // Serve static files (HTML, CSS, JS)
-app.use(express.static('views'));
+app.use(express.static('public'));
 
 // Handle form submission
-app.post('/submit', (req, res) => {
-    console.log('Received form data:', req.body);
+app.post('/tshirt', upload.array(), (req, res) => {
     
     const { t_shirt, color } = req.body;
     
     // Handle the response
     const response = {
-        success: true,
         message: `You bought a T-shirt size: ${t_shirt || 'Not selected'}, color: ${color || 'Not selected'}`
     };
     
-    res.json(response);
+    res.send(response);
+    console.log(`Received T-shirt size: ${t_shirt}, color: ${color}`);
 });
 
 const listener = app.listen(process.env.PORT || 3000, () => {
