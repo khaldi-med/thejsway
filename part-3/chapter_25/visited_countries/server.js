@@ -26,7 +26,7 @@ app.use(parse);
 app.use(express.static('public'));
 
 // Handle form submission
-app.post('/submit', upload.array(), (req, res) => {
+app.post('/api/countries', upload.array(), (req, res) => {
   const { name, number } = req.body;
 
   // Handle the response

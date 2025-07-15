@@ -12,7 +12,7 @@ document.getElementById('country').addEventListener('submit', (e) => {
     console.log(`Key: ${key}, Value: ${value}`); // Log each key-value pair
   }
   // Send data to server
-  fetch('/submit', {
+  fetch('/api/countries', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
