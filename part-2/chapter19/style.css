@@ -1,6 +1,11 @@
 body {
   background-color: #ffd131;
+  font-family: Arial, 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: #333;  
+  font-size: 20px;
+  line-height: 1.6;
 }
+
 
 /* Main link element (<div> tag) */
 .link {
@@ -40,3 +45,12 @@ body {
 .linkForm {
   margin-bottom: 20px;
 }
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+

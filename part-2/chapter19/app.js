@@ -16,7 +16,9 @@ class Link {
   toHTML() {
     const linkElement = document.createElement("div");
     linkElement.setAttribute("class", "link");
-
+    linkElement.style.border = "1px solid #ccc";
+    linkElement.style.padding = "10px";
+    linkElement.style.margin = "10px 0";
     const titleElement = document.createElement("a");
     titleElement.setAttribute("class", "linkTitle");
     titleElement.textContent = this.title;
@@ -86,26 +88,34 @@ let areaInput = () => {
 
     if (title && url && author) {
       const newLink = new Link(title, url, author);
-      form.appendChild(newLink.toHTML());
-
+      form.insertBefore(newLink.toHTML(), form.firstChild);
       // Clear the form inputs
       titleInput.value = "";
       urlInput.value = "";
       authorInput.value = "";
+
 
       // Display a success message
 
       const messageDiv = document.createElement("span");
       messageDiv.setAttribute("class", "message");
       messageDiv.textContent = "Link added successfully!";
-      messageDiv.style.color = "green";
+      messageDiv.style.color = "black";
       messageDiv.style.fontWeight = "bold";
       messageDiv.style.background = "rgb(133, 230, 133)";
+      messageDiv.style.position = "fixed";
+      messageDiv.style.top = "10px";
+      messageDiv.style.right = "10px";
+      messageDiv.style.padding = "20px";
+      messageDiv.style.border = "1px solid green";
+      messageDiv.style.borderRadius = "5px";
+      messageDiv.style.zIndex = "1000";
 
-      form.appendChild(messageDiv);
+      document.body.appendChild(messageDiv);
+
       setTimeout(() => {
-        form.removeChild(messageDiv);
-      }, 2000);
+        document.body.removeChild(messageDiv);
+      }, 1500);
 
       // Enable the "Add New Link" button again
       addNewLink.disabled = false;
@@ -113,11 +123,27 @@ let areaInput = () => {
       // Remove the input form after submission
       form.removeChild(divElement);
     } else {
-      alert("Please fill in all fields.");
+      const ErrorMessage = document.createElement("span");
+      ErrorMessage.textContent = "Please fill in all fields.";
+      ErrorMessage.style.color = "black";
+      ErrorMessage.style.fontWeight = "bold";
+      ErrorMessage.style.background = "rgba(251, 47, 2, 1)";
+      ErrorMessage.style.position = "fixed";
+      ErrorMessage.style.top = "10px";
+      ErrorMessage.style.right = "10px";
+      ErrorMessage.style.padding = "20px";
+      ErrorMessage.style.border = "1px solid green";
+      ErrorMessage.style.borderRadius = "5px";
+      ErrorMessage.style.zIndex = "1000";
+      document.body.appendChild(ErrorMessage);
+      setTimeout(() => {
+        document.body.removeChild(ErrorMessage);
+      }, 1500);
     }
   });
 
-  form.appendChild(divElement);
+  // Insert the input form at the top (first position)
+  form.insertBefore(divElement, form.firstChild);
   return divElement;
 };
 
